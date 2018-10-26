@@ -1,0 +1,15 @@
+{% extends 'base/index.html' %}
+{% load staticfiles %}
+
+{% block title %}
+	Especial
+{% endblock %}
+
+{% block content %}
+<divc class="container">
+	<a href="{% url 'clientes:nuevoRegistro' %}" class="btn mb-3">
+		Nuevo registro
+	</a>
+	{% include 'clientes/infoClientes.html' %}
+</div>
+{% endblock %}

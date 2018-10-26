@@ -1,0 +1,30 @@
+
+<divc class="container">
+<table class="table">
+	<thead>
+		<tr>
+			<th scope="col">ID</th>
+			<th scope="col">Nombre</th>
+			<th scope="col">Apellido</th>
+			<th scope="col">Fecha de Nacimiento</th>
+			<th scope="col">Numero de hijos</th>
+			<th scope="col">Acciones</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for cliente in object_list %} 
+		<tr>
+			<th scope="row">{{cliente.id}}</th>
+			<td>{{cliente.nombre}}</td>
+			<td>{{cliente.apellido}}</td>
+			<td>{{cliente.fechaHBD}}</td>
+			<td>{{cliente.numHijos}}</td>
+		</tr>
+		{% empty %}
+		<tr>
+			<td colspan="6">No hay clientes</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+</div>

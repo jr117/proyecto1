@@ -1,0 +1,38 @@
+
+
+<table class="table">
+	<thead>
+		<tr>
+			<th scope="col">ID</th>
+			<th scope="col">Nombre</th>
+			<th scope="col">Apellido</th>
+			<th scope="col">Fecha de Nacimiento</th>
+			<th scope="col">Numero de hijos</th>
+			<th scope="col">Acciones</th>
+		</tr>
+	</thead>
+	<tbody>
+		
+		{% for cliente in object_list %} 
+		<tr>
+			<th scope="row">{{cliente.id}}</th>
+			<td>{{cliente.nombre}}</td>
+			<td>{{cliente.apellido}}</td>
+			<td>{{cliente.fechaHBD}}</td>
+			<td>{{cliente.numHijos}}</td>
+			<td>
+				<a href="{% url 'clientes:editarRegistro' cliente.id %}" class="btn mb-3">
+					Editar
+				</a>
+				<a href="{% url 'clientes:eliminarRegistro' cliente.id %}" class="btn mb-3">
+					Eliminar
+				</a>
+			</td>
+		</tr>
+		{% empty %}
+		<tr>
+			<td colspan="6">No hay clientes</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
